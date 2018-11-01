@@ -6,14 +6,14 @@
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-#include "BaseApplication.h"
+#include "Application.h"
 
 #define GLM_FORCE_RADIANS
 
 #define RESX 1024
 #define RESY 768
 
-BaseApplication app;
+Application app;
 
 //Se tiene que llamar despues de inicializar la ventana y el OpenGL, pero antes del main loop
 void init()

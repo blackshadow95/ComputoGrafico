@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{91329003-A64C-4B7C-853A-5F427AC2E186}</ProjectGuid>
     <RootNamespace>MidPointLine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -84,7 +84,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;$(SolutionDir)../Libs/glew/include;$(SolutionDir)../Libs/glfw/include;$(SolutionDir)../Libs/glm;$(SolutionDir)../Libs/SOIL/src</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)../Libs/glew/lib/Debug/x64;$(SolutionDir)../Libs/glfw/src/Debug/;$(SolutionDir)../Libs/SOIL\projects\VC9\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3dll.lib;OpenGL32.lib;glew32d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,18 +113,23 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;$(SolutionDir)../Libs/glew/include;$(SolutionDir)../Libs/glfw/include;$(SolutionDir)../Libs/glm;$(SolutionDir)../Libs/SOIL/src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)../Libs/glew/lib/Debug/x64;$(SolutionDir)../Libs/glfw/src/Debug/;$(SolutionDir)../Libs/SOIL\projects\VC9\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3dll.lib;OpenGL32.lib;glew32d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\BaseApplication.cpp" />
     <ClCompile Include="src\Pixel.cpp" />
     <ClCompile Include="src\ShaderFuncs.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\BaseApplication.h" />
     <ClInclude Include="include\Object3D.h" />
     <ClInclude Include="include\ShaderFuncs.h" />

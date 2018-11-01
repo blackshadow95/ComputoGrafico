@@ -12,6 +12,13 @@ private:
 	char color[4];
 
 public:
+	Color(const char& R, const char& G, const char& B, const char& A)
+	{
+		color[0] = R;
+		color[1] = G;
+		color[2] = B;
+		color[3] = A;
+	}
 	char R() { return color[0]; };
 	char G() { return color[1]; };
 	char B() { return color[2]; };
